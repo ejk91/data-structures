@@ -18,6 +18,63 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
+  
+  // check if this value equal to target
+  if (this.value === target) {
+    return true;
+  } else {
+  // check all children
+    for (var i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(target)) {
+        return true;
+      }    
+    }
+    return false;
+  }
+    // call contains on each child
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // for (var i = 0; i < this.children.length; i++) {
+  //   if (this.children[i].value === target) {
+  //     return true;
+  //   } else if (this.children[i].value !== target) {
+  //     for (var s = 0; s < this.children[i].children.length; s++) {
+  //       var result = this.children[s].contains(target);
+  //       if (result) {
+  //         return true;
+  //       }
+  //     }
+  //   }
+  //   return false;
+  // }
+  // var parentChildNum = this.children.length;
+  // var count = 0;
+
+  // if (count > parentchildNum) {
+  //   for (var i = 0; i < this.children.length; i++) {
+  //     if (this.children[i].value === target) {
+  //       return
+  //     }
+  //   }
+  // }
+
+
   // var isTrue = false;
   // console.log(this.children);
   // for (var i = 0; i < this.children.length; i++) {
@@ -43,22 +100,21 @@ treeMethods.contains = function(target) {
   // }
   // return isTrue; 
 
-  var isTrue = true;
-  for (var i = 0; i > this.children.length; i++) {
-    if (this.children[i].value !== target) {
-      return this.children[i].children.contains(target);
+//this one doesnt pass if there is no value in the tree
+  // var isTrue = false;
+  // for (var i = 0; i > this.children.length; i++) {
+  //   if (this.children[i].value !== target) {
+  //     return this.children[i].children.contains(target);
       
-    } else {
-      isTrue = true;
-    }
-  }
-  return isTrue;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  // return true;
 
   // var isTrue = false;
   // for (var i = 0; i > this.children.length; i++) {
-  //   if (this.children[i].value === target) {
-  //     return true;
-  //   } else if (this.children[i].value !== target) {
+  //   if (this.children[i].value !== target) {
   //     return this.children[i].children.contains(target);
   //   }
   // }
