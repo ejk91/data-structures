@@ -26,6 +26,7 @@ describe('hashTable', function() {
   it('should overwrite values that have the same key', function() {
     hashTable.insert('Bob', 'Loblaw');
     hashTable.insert('Bob', 'Barker');
+    debugger;
     expect(hashTable.retrieve('Bob')).to.equal('Barker');
   });
 
