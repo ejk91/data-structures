@@ -36,7 +36,6 @@ HashTable.prototype.retrieve = function(key) { //get
 HashTable.prototype.remove = function(key) {
   var index = getIndexBelowMaxForKey(key, this._limit);
   //console.log(this._storage[index]);
-
   this._storage.set(index, undefined);
 
   //find arrays at index - how do I access storage?
